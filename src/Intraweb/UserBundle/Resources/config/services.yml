@@ -1,0 +1,7 @@
+parameters:
+#    intraweb_user.example.class: Intraweb\UserBundle\Example
+
+services:
+#    intraweb_user.example:
+#        class: %intraweb_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

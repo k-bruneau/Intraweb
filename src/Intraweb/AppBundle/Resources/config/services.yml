@@ -1,0 +1,7 @@
+parameters:
+#    intraweb_app.example.class: Intraweb\AppBundle\Example
+
+services:
+#    intraweb_app.example:
+#        class: %intraweb_app.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

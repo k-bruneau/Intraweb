@@ -1,0 +1,3 @@
+intraweb_user_homepage:
+    pattern:  /user/home/{name}
+    defaults: { _controller: IntrawebUserBundle:Default:index }
