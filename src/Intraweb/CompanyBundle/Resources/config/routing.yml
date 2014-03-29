@@ -1,0 +1,30 @@
+company:
+    pattern:  /
+    defaults: { _controller: "IntrawebCompanyBundle:Company:index" }
+
+company_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "IntrawebCompanyBundle:Company:show" }
+
+company_new:
+    pattern:  /new
+    defaults: { _controller: "IntrawebCompanyBundle:Company:new" }
+
+company_create:
+    pattern:  /create
+    defaults: { _controller: "IntrawebCompanyBundle:Company:create" }
+    requirements: { _method: post }
+
+company_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "IntrawebCompanyBundle:Company:edit" }
+
+company_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "IntrawebCompanyBundle:Company:update" }
+    requirements: { _method: post|put }
+
+company_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "IntrawebCompanyBundle:Company:delete" }
+    requirements: { _method: post|delete }
