@@ -19,11 +19,24 @@ class User extends BaseUser
     protected $id;
 
     /**
-    * @ORM\ManyToOne(targetEntity="Intraweb\CompanyBundle\Entity\Company", inversedBy="users")
-    * @ORM\JoinColumn(name="company_id", referencedColumnName="id")
+    * @ORM\Column(type="integer")
+    * @ORM\OneToOne(targetEntity="Intraweb\UserBundle\Entity\Company")
     */
 
-    private $company;
+    private $company_id;
+
+    /**
+    * @ORM\Column(type="text")
+    */
+
+    protected $email;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->company = null;
+        $this->company_id = null;
+    }
 
     /**
      * Get id
@@ -39,12 +52,12 @@ class User extends BaseUser
     /**
      * Set company_id
      *
-     * @param integer $Company
+     * @param integer $companyId
      * @return User
      */
-    public function setCompany($company)
+    public function setCompanyId($companyId)
     {
-        $this->company = $company;
+        $this->company_id = $companyId;
 
         return $this;
     }
@@ -54,8 +67,8 @@ class User extends BaseUser
      *
      * @return integer 
      */
-    public function getCompany()
+    public function getCompanyId()
     {
-        return $this->company;
+        return $this->company_id;
     }
 }

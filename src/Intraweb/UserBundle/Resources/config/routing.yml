@@ -1,3 +1,34 @@
 intraweb_user_homepage:
     pattern:  /user/home/{name}
     defaults: { _controller: IntrawebUserBundle:Default:index }
+
+user_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "IntrawebUserBundle:User:show" }
+
+user_new:
+    pattern:  /new
+    defaults: { _controller: "IntrawebUserBundle:User:new" }
+
+user_create:
+    pattern:  /create
+    defaults: { _controller: "IntrawebUserBundle:User:create" }
+    requirements: { _method: post }
+
+user_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "IntrawebUserBundle:User:edit" }
+
+user_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "IntrawebUserBundle:User:update" }
+    requirements: { _method: post|put }
+
+user_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "IntrawebUserBundle:User:delete" }
+    requirements: { _method: post|delete }
+
+user_add_user:
+    pattern: /adduser
+    defaults: { _controller: "IntrawebUserBundle:User:addUser"}

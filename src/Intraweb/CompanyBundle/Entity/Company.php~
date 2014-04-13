@@ -1,0 +1,129 @@
+<?php
+
+namespace Intraweb\CompanyBundle\Entity;
+
+#use FOS\UserBundle\Model\User as BaseUser;
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="Company")
+ */
+
+class Company 
+{
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Intraweb\UserBundle\Entity\User", mappedBy="Company")
+     */
+    protected $users;
+    
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+    * @ORM\Column(type="string", length=32)
+    */
+
+    protected $company_name;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->users = new ArrayCollection(); 
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set company_name
+     *
+     * @param string $companyName
+     * @return Company
+     */
+    public function setCompanyName($companyName)
+    {
+        $this->company_name = $companyName;
+
+        return $this;
+    }
+
+    /**
+     * Get company_name
+     *
+     * @return string 
+     */
+    public function getCompanyName()
+    {
+        return $this->company_name;
+    }
+
+    /**
+     * Add users
+     *
+     * @param \Intraweb\CompanyBundle\Entity\User $users
+     * @return Company
+     */
+    public function addUser(\Intraweb\CompanyBundle\Entity\User $users)
+    {
+        $this->users[] = $users;
+
+        return $this;
+    }
+
+    /**
+     * Remove users
+     *
+     * @param \Intraweb\CompanyBundle\Entity\User $users
+     */
+    public function removeUser(\Intraweb\CompanyBundle\Entity\User $users)
+    {
+        $this->users->removeElement($users);
+    }
+
+    /**
+     * Get users
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
+
+    /**
+     * Set company
+     *
+     * @param string $company
+     * @return Company
+     */
+    public function setCompany($company)
+    {
+        $this->company = $company;
+
+        return $this;
+    }
+
+    /**
+     * Get company
+     *
+     * @return string 
+     */
+    public function getCompany()
+    {
+        return $this->company;
+    }
+}

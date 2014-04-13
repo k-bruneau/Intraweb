@@ -4,7 +4,7 @@ namespace Intraweb\CompanyBundle\Entity;
 
 use FOS\UserBundle\Model\User;
 use Doctrine\ORM\Mapping as ORM;
-
+use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Company
  *
@@ -13,6 +13,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Company
 {
+    public function __construct()
+    {
+        $this->company = null;
+        $this->users = new ArrayCollection();
+    }
+
     /**
      * @var integer
      *
@@ -38,6 +44,12 @@ class Company
      * })
      */
     private $owner;
+
+    /**
+    * @ORM\OneToMany(targetEntity="Intraweb\UserBundle\Entity\User" , mappedBy="company")
+    */
+
+    private $users;
     
     public function getId() {
         return $this->id;
