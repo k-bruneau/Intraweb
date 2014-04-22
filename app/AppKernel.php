@@ -33,6 +33,7 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new Intraweb\UserBundle\IntrawebUserBundle(),
             new Intraweb\AppBundle\IntrawebAppBundle(),
+            new Intraweb\CompanyBundle\IntrawebCompanyBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

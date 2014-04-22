@@ -26,3 +26,11 @@ user_bundle:
 
 app_bundle:
     resource: "@IntrawebAppBundle/Resources/config/routing.yml"
+
+intraweb_user:
+    resource: "@IntrawebUserBundle/Resources/config/routing.yml"
+    prefix:   /user
+
+intraweb_company:
+    resource: "@IntrawebCompanyBundle/Resources/config/routing.yml"
+    prefix: /company
