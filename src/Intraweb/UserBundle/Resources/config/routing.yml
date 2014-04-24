@@ -29,6 +29,6 @@ user_delete:
     defaults: { _controller: "IntrawebUserBundle:User:delete" }
     requirements: { _method: post|delete }
 
-user_add_user:
+user_add_employee:
     pattern: /adduser
-    defaults: { _controller: "IntrawebUserBundle:User:addUser"}
+    defaults: { _controller: "IntrawebUserBundle:Employee:addUser"}
